@@ -11,12 +11,18 @@
         <div class="container">
             <a href="/" class="navbar-brand text-light">Stupid Twitter</a>
             <ul class="nav navbar-nav flex-row float-right">
+                {% if session['user_id'] %}
                 <li class="nav-item">
-                    <a class="nav-link pr-3 text-light" href="">Login</a>
+                    <a class="nav-link pr-3 text-light" href="/logout">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link pr-3 text-light" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href=""> Sign Up</a>
+                    <a class="nav-link text-light" href="/register"> Sign Up</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
